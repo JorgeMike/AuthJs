@@ -2,6 +2,7 @@ import mongoose, { Schema, Document, models } from "mongoose";
 
 // Definir la interfaz del usuario
 interface IUser {
+  name: string;
   email: string;
   password: string;
 }
@@ -9,6 +10,10 @@ interface IUser {
 // Definir el esquema del usuario
 const UserSchema: Schema = new Schema(
   {
+    name: {
+      type: String,
+      require: true,
+    },
     email: {
       type: String,
       required: true,
