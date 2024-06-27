@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { signIn } from "../../auth";
+import { signIn } from "../auth";
 
 const { MONGODB_URI } = process.env;
 

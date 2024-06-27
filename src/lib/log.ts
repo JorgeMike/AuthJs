@@ -1,6 +1,6 @@
 "use server";
 
-import { signIn } from "../../auth";
+import { signIn } from "../auth";
 
 export const log = async (formData: FormData) => {
   try {

@@ -1,36 +1,24 @@
-import User from "@/models/user";
+import User from "../../../../models/User";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { connectDB } from "@/lib/mongo";
+import { error } from "console";
+import { signInSchema } from "@/lib/zod";
 
 export const POST = async (req: NextRequest) => {
   await connectDB();
-  const { email, password, name } = await req.json();
+  const body = await req.json();
 
-  if (!email || !password) {
-    return NextResponse.json(
-      { error: "Email and password are required" },
-      {
-        status: 400,
-      }
-    );
-  }
+  const { email, password } = await signInSchema.parseAsync(body);
 
-  if (password.length < 6) {
-    return NextResponse.json(
-      { error: "Password must be at least 6 characters" },
-      {
-        status: 400,
-      }
-    );
-  }
+  console.log(email, password);
 
   try {
     const userFound = await User.findOne({ email });
 
     if (userFound) {
       return NextResponse.json(
-        { error: "Email already exists" },
+        { error: true, message: "User already exists" },
         {
           status: 409,
         }
@@ -39,12 +27,22 @@ export const POST = async (req: NextRequest) => {
 
     const passwordHashed = await bcrypt.hash(password, 10);
 
-    const user = new User({ name, email, password: passwordHashed });
+    const user = new User({
+      name: body.name,
+      email,
+      password: passwordHashed,
+      authProvider: "credentials",
+    });
+
     const userSaved = await user.save();
 
-    return NextResponse.json({ user: userSaved });
+    return NextResponse.json({
+      error: false,
+      user: userSaved,
+      message: "User created successfully",
+    });
   } catch (error) {
-    console.log(error);
+    console.log("ERROR_SIGNUP", error);
     return NextResponse.json(
       { error },
       {

@@ -9,3 +9,5 @@ export const signInSchema = object({
     .min(6, "Password must be more than 8 characters")
     .max(32, "Password must be less than 32 characters"),
 });
+
+export const emailSchema = string({ required_error: "Email is required" }).email();
