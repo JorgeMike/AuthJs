@@ -1,4 +1,7 @@
 import { object, string } from "zod";
+const phoneRegex = new RegExp(
+  /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
+);
 
 export const signInSchema = object({
   email: string({ required_error: "Email is required" })
@@ -10,4 +13,15 @@ export const signInSchema = object({
     .max(32, "Password must be less than 32 characters"),
 });
 
-export const emailSchema = string({ required_error: "Email is required" }).email();
+export const emailSchema = string({
+  required_error: "Email is required",
+}).email();
+
+export const updateProfileSchema = object({
+  name: string({ required_error: "Name is required" }).min(
+    3,
+    "Name is required"
+  ),
+  birthdate: string(),
+  phone: string().regex(phoneRegex, "Invalid phone number"),
+});

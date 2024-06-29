@@ -1,0 +1,11 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/bootstrap";
+
+.offcanvas {
+  border-radius: 0px 10px 10px 0px;
+}
+
+.hover-light-subtle:hover {
+  background-color: $light-bg-subtle-dark;
+}

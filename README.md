@@ -1,3 +1,5 @@
+This is a Next.js project bootstrapped with create-next-app.
+
 # Proyecto de práctica con AuthJS
 
 ## Descripción
@@ -17,3 +19,4 @@ Este proyecto tiene como objetivo practicar el uso de la librería AuthJS para i
 - MongoDB
 - Axios
 - Zod
+- Sass

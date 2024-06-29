@@ -1,5 +1,6 @@
 "use client";
 import Spinner from "@/components/Spinners/Spinner";
+import { darkToastStyles } from "@/styles/toast";
 import { ISignUp } from "@/types/ISignUp";
 import axios from "axios";
 import Link from "next/link";
@@ -9,12 +10,6 @@ import toast from "react-hot-toast";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 
 export default function Page() {
-  const darkToastStyles: React.CSSProperties = {
-    borderRadius: "10px",
-    background: "#333",
-    color: "#fff",
-  };
-
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [user, setUser] = useState<ISignUp>({

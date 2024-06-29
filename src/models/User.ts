@@ -1,14 +1,15 @@
 import { Schema, model, models } from "mongoose";
 
 // Definir la interfaz del usuario
-interface IUser {
+export interface IUser {
   name: string;
   email: string;
   password: string;
-  birthdate?: Date;
+  birthdate?: string;
   age?: number;
   phone?: string;
   authProvider: string;
+  image?: string;
 }
 
 // Definir el esquema del usuario
@@ -30,7 +31,7 @@ const UserSchema: Schema = new Schema<IUser>(
       maxLength: [100, "Password must be at most 100 characters"],
     },
     birthdate: {
-      type: Date,
+      type: String,
     },
     age: {
       type: Number,
@@ -43,6 +44,9 @@ const UserSchema: Schema = new Schema<IUser>(
     authProvider: {
       type: String,
       required: true,
+    },
+    image: {
+      type: String,
     },
   },
   { timestamps: true }

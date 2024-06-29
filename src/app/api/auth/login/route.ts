@@ -7,7 +7,7 @@ import { NextRequest, NextResponse } from "next/server";
 export const POST = async (req: NextRequest) => {
   try {
     await connectDB();
-    const { email, name, authProvider } = await req.json();
+    const { email, name, authProvider, image } = await req.json();
 
     const emailValid = await emailSchema.parseAsync(email);
 
