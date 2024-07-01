@@ -59,7 +59,7 @@ export default function Page() {
         <Alert />
       </Suspense>
       <div>
-        <form className={`mt-5 border p-3 rounded`} onSubmit={handleOnSubmit}>
+        <form className="mt-5 border p-3 rounded" onSubmit={handleOnSubmit}>
           <h2 className="text-center">Sign In</h2>
           <hr />
           <div className="mb-3">

@@ -22,6 +22,6 @@ export const updateProfileSchema = object({
     3,
     "Name is required"
   ),
-  birthdate: string(),
-  phone: string().regex(phoneRegex, "Invalid phone number"),
+  birthdate: string().optional(),
+  phone: string().regex(phoneRegex, "Invalid phone number").optional(),
 });

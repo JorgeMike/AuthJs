@@ -45,8 +45,6 @@ export const PATCH = auth(async (req, res) => {
     }
   }
 
-  console.log("PATCH_USER", body);
-
   try {
     await updateProfileSchema.parseAsync(body);
 
@@ -56,7 +54,10 @@ export const PATCH = auth(async (req, res) => {
       { new: true }
     );
 
-    return Response.json({ error: false, user }, { status: 200 });
+    return Response.json(
+      { error: false, message: "Profile updated successfully", user },
+      { status: 200 }
+    );
   } catch (error) {
     console.log("ERROR_PATCH_USER", error);
     if (error instanceof ZodError) {

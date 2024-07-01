@@ -43,7 +43,7 @@ export default function Navbar() {
           >
             <div className="offcanvas-header">
               <h5 className="offcanvas-title" id="offcanvasExampleLabel">
-                Offcanvas
+                MyApplication
               </h5>
               <button
                 type="button"
@@ -55,7 +55,7 @@ export default function Navbar() {
             <div className="offcanvas-body">
               <ul className="nav d-flex flex-column d-sm-none">
                 {links.map(({ href, label }) => (
-                  <li key={href}>
+                  <li key={href} data-bs-dismiss="offcanvas">
                     <Link
                       href={href}
                       className={`nav-link px-2 text-white ${
@@ -86,7 +86,7 @@ export default function Navbar() {
               ))}
             </ul>
 
-            <div className="flex-shrink-0 dropdown">
+            <div className="flex-shrink-0 dropdown hover-light-subtle rounded p-1">
               <a
                 href="#"
                 className="d-block link-body-emphasis text-decoration-none dropdown-toggle"

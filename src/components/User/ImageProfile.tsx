@@ -5,9 +5,11 @@ import { MdEdit } from "react-icons/md";
 interface IImageProfile {
   src: string;
   alt: string;
+  onEdit?: () => void;
 }
 
-export default function ImageProfile({ src, alt }: IImageProfile) {
+export default function ImageProfile({ src, alt, onEdit }: IImageProfile) {
+
   return (
     <div className="position-relative d-inline-block">
       <Image
@@ -17,15 +19,17 @@ export default function ImageProfile({ src, alt }: IImageProfile) {
         height={120}
         className="rounded-circle"
       />
-      <div
+      <button
+        type="button"
         className="position-absolute d-flex align-items-center justify-content-center btn btn-primary p-1 rounded-circle"
         style={{
           bottom: 0,
           right: 0,
         }}
+        onClick={onEdit}
       >
         <MdEdit />
-      </div>
+      </button>
     </div>
   );
 }

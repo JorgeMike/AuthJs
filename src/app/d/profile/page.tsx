@@ -9,8 +9,10 @@ import toast from "react-hot-toast";
 
 export default function Page() {
   const { data: session } = useSession();
-  const [profile, setProfile] = useState<IUser | null>(null);
+  const [image, setImage] = useState<string | null>(null);
+  const [imageProfile, setImageProfile] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [profile, setProfile] = useState<IUser | null>(null);
   const [profileEdit, setProfileEdit] = useState<IUser>({
     name: "",
     email: "",
@@ -22,28 +24,47 @@ export default function Page() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    const fetchImage = async (image_name: string) => {
+      try {
+        const response = await axios.get(
+          `/api/user/profile-picture/${image_name}`
+        );
+
+        setImageProfile(response.data.image);
+      } catch (error: any) {
+        console.log(error.response);
+        setError(
+          error.response
+            ? error.response.message
+            : "An error occurred, please try again later."
+        );
+      }
+    };
+
     const fetchProfile = async () => {
       try {
         const response = await axios.get(`/api/user/${session?.user?.email}`);
-        if (response.data.error) {
-          setError(response.data.message);
-          return;
-        }
+
         setProfile(response.data.user);
         setProfileEdit(response.data.user);
+
+        if (response.data.user.image) {
+          fetchImage(response.data.user.image);
+        }
       } catch (error: any) {
         console.log(error.response);
-        if (error.response) {
-          setError(error.response.message);
-        }
-        setError("Ha ocurrido un error, intenta de nuevo más tarde.");
+        setError(
+          error.response
+            ? error.response.message
+            : "An error occurred, please try again later."
+        );
       }
     };
 
     if (session) {
       fetchProfile();
     }
-  }, [session]);
+  }, [session?.user?.email]);
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -51,7 +72,6 @@ export default function Page() {
   };
 
   const handleOnUpdate = async () => {
-    console.log("Update profile", profileEdit);
     setIsLoading(true);
     try {
       const res = await axios.patch(`/api/user/${session?.user?.email}`, {
@@ -59,37 +79,88 @@ export default function Page() {
         birthdate: profileEdit.birthdate,
         phone: profileEdit.phone,
       });
-      if (res.status === 200) {
-        setProfile(profileEdit);
-        toast.success("Profile updated successfully", {
-          style: darkToastStyles,
-        });
-        setError(null);
-      }
+
+      setProfile(profileEdit);
+      toast.success(res.data.message, {
+        style: darkToastStyles,
+      });
+      setError(null);
     } catch (error: any) {
       console.log(error.response.data);
-      if (error.response.data.error) {
-        setError(error.response.data.message);
-      } else {
-        setError("Ha ocurrido un error, intenta de nuevo más tarde.");
-      }
+      setError(
+        error.response.data?.message ||
+          "An error occurred, please try again later."
+      );
     } finally {
       setIsLoading(false);
     }
   };
+
+  const handleOnClick = () => {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = "image/png, image/jpeg, image/jpg";
+    input.click();
+
+    input.onchange = async (event) => {
+      const file = (event.target as HTMLInputElement).files?.[0];
+
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const base64Image = reader.result as string;
+          console.log("Base64 image:", base64Image);
+          setImage(base64Image);
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+  };
+
+  const handleOnUpdateImage = async () => {
+    if (image) {
+      setIsLoading(true);
+      try {
+        const res = await axios.post(`/api/user/profile-picture`, {
+          email: session?.user?.email,
+          image,
+        });
+        if (res.status === 200) {
+          toast.success(res.data.message, {
+            style: darkToastStyles,
+          });
+          setImageProfile(image);
+        }
+      } catch (error: any) {
+        console.log(error.response);
+        toast.error(
+          error.response.data?.message ||
+            "An error occurred, please try again later.",
+          {
+            style: darkToastStyles,
+          }
+        );
+      } finally {
+        setIsLoading(false);
+        setImage(null);
+      }
+    }
+  };
+
   return (
     <div className="container">
       {error && <div className="alert alert-danger">{error}</div>}
       <div className="row gap-3 mx-2 mx-sm-0">
-        <div className="col-12 col-md-6 border d-flex flex-column justify-content-center rounded-4 p-2 ">
+        <div className="col-12 col-md-6 border d-flex flex-column justify-content-center rounded-3 p-2 ">
           <div className="d-flex align-items-center justify-content-center">
             <ImageProfile
-              src={profile?.image || session?.user?.image || ""}
+              src={image || imageProfile || session?.user?.image || ""}
               alt="Profile Image"
+              onEdit={handleOnClick}
             />
           </div>
           <div className="mt-2">
-            <p className="text-muted mb-1">Email:</p>
+            <label className="form-label mb-1">Email:</label>
             <input
               type="email"
               value={profile?.email}
@@ -97,10 +168,19 @@ export default function Page() {
               disabled
             />
           </div>
+          {image && (
+            <button
+              className="btn btn-primary w-100 mt-2"
+              onClick={handleOnUpdateImage}
+              disabled={isLoading}
+            >
+              Update Image
+            </button>
+          )}
         </div>
-        <div className="col border rounded-4">
+        <div className="col border rounded-3">
           <div className="my-3">
-            <p className="text-muted mb-1">Name:</p>
+            <label className="form-label mb-1">Name:</label>
             <input
               type="text"
               name="name"
@@ -111,7 +191,7 @@ export default function Page() {
             />
           </div>
           <div className="my-3">
-            <p className="text-muted mb-1">Birthdate:</p>
+            <p className="form-label mb-1">Birthdate:</p>
             <input
               type="date"
               name="birthdate"
@@ -122,7 +202,7 @@ export default function Page() {
             />
           </div>
           <div className="my-3">
-            <p className="text-muted mb-1">Phone number:</p>
+            <p className="form-label mb-1">Phone number:</p>
             <input
               type="tel"
               name="phone"
@@ -135,9 +215,9 @@ export default function Page() {
               disabled={isLoading}
             />
           </div>
-          {profile?.name !== profileEdit?.name ||
-          profile?.birthdate !== profileEdit?.birthdate ||
-          profile?.phone !== profileEdit?.phone ? (
+          {(profile?.name !== profileEdit?.name ||
+            profile?.birthdate !== profileEdit?.birthdate ||
+            profile?.phone !== profileEdit?.phone) && (
             <button
               className="btn btn-primary w-100 mb-3"
               onClick={handleOnUpdate}
@@ -145,7 +225,7 @@ export default function Page() {
             >
               Update
             </button>
-          ) : null}
+          )}
         </div>
       </div>
     </div>
