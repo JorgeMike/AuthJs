@@ -5,7 +5,6 @@ import React from "react";
 
 export default function Page() {
   const { data: session, status } = useSession();
-  console.log(session);
   return (
     <div className="container">
       <div className="mt-5 border rounded p-3 pb-0 bg-light-subtle">

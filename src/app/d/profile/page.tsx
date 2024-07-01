@@ -9,10 +9,10 @@ import toast from "react-hot-toast";
 
 export default function Page() {
   const { data: session } = useSession();
-  const [image, setImage] = useState<string | null>(null);
-  const [imageProfile, setImageProfile] = useState<string | null>(null);
+  const [image, setImage] = useState<string | null>("/profile.png");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [profile, setProfile] = useState<IUser | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const [profileEdit, setProfileEdit] = useState<IUser>({
     name: "",
     email: "",
@@ -21,35 +21,18 @@ export default function Page() {
     phone: "",
     authProvider: "",
   });
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchImage = async (image_name: string) => {
-      try {
-        const response = await axios.get(
-          `/api/user/profile-picture/${image_name}`
-        );
-
-        setImageProfile(response.data.image);
-      } catch (error: any) {
-        console.log(error.response);
-        setError(
-          error.response
-            ? error.response.message
-            : "An error occurred, please try again later."
-        );
-      }
-    };
-
     const fetchProfile = async () => {
       try {
         const response = await axios.get(`/api/user/${session?.user?.email}`);
 
         setProfile(response.data.user);
         setProfileEdit(response.data.user);
-
         if (response.data.user.image) {
-          fetchImage(response.data.user.image);
+          setImage(
+            `${process.env.IMAGES_SOURCEURL}${response.data.user.image}`
+          );
         }
       } catch (error: any) {
         console.log(error.response);
@@ -109,7 +92,6 @@ export default function Page() {
         const reader = new FileReader();
         reader.onload = () => {
           const base64Image = reader.result as string;
-          console.log("Base64 image:", base64Image);
           setImage(base64Image);
         };
         reader.readAsDataURL(file);
@@ -129,7 +111,7 @@ export default function Page() {
           toast.success(res.data.message, {
             style: darkToastStyles,
           });
-          setImageProfile(image);
+          setImage(image);
         }
       } catch (error: any) {
         console.log(error.response);
@@ -140,9 +122,9 @@ export default function Page() {
             style: darkToastStyles,
           }
         );
+        setImage(null);
       } finally {
         setIsLoading(false);
-        setImage(null);
       }
     }
   };
@@ -154,7 +136,7 @@ export default function Page() {
         <div className="col-12 col-md-6 border d-flex flex-column justify-content-center rounded-3 p-2 ">
           <div className="d-flex align-items-center justify-content-center">
             <ImageProfile
-              src={image || imageProfile || session?.user?.image || ""}
+              src={image || session?.user?.image || ""}
               alt="Profile Image"
               onEdit={handleOnClick}
             />

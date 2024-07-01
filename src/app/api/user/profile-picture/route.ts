@@ -1,7 +1,6 @@
 import { auth } from "@/auth";
 import User from "@/models/User";
-import { existsSync, mkdirSync, writeFileSync } from "fs";
-import path from "path";
+import axios from "axios";
 
 export const POST = auth(async (req, res) => {
   if (!req.auth) {
@@ -9,6 +8,7 @@ export const POST = auth(async (req, res) => {
   }
 
   try {
+    console.log("POST", process.env.MICROSERVICE_URL);
     const body = await req.json();
     const user = await User.findOne({ email: body.email });
 
@@ -16,37 +16,39 @@ export const POST = auth(async (req, res) => {
       return Response.json({ message: "User not found" }, { status: 404 });
     }
 
-    const uploadDir = path.join(process.cwd(), "uploads");
+    const image_name = `${getEmailPrefix(user.email)}.${getFileExtension(
+      body.image
+    )}`;
 
-    if (!existsSync(uploadDir)) {
-      mkdirSync(uploadDir);
+    const res = await axios.post(
+      `${process.env.MICROSERVICE_URL}uploads/base64`,
+      {
+        folder: "AuthJs",
+        image_name: image_name,
+        image: body.image,
+      }
+    );
+
+    if (!user.image || user.image !== image_name) {
+      user.image = image_name;
+      await user.save();
     }
-
-    const base64Header = body.image.split(",")[0];
-    const base64Image = body.image.split(",")[1];
-
-    const fileExtension = getFileExtension(base64Header);
-
-    console.log(fileExtension);
-
-    const fileName = `${getEmailPrefix(user.email)}.${fileExtension}`;
-
-    const filePath = path.join(uploadDir, fileName);
-
-    const imageBuffer = Buffer.from(base64Image, "base64");
-
-    writeFileSync(filePath, imageBuffer);
-
-    user.image = fileName;
-    await user.save();
 
     return Response.json({ error: false, message: "Profile picture updated" });
   } catch (error: any) {
     console.error(error.message);
-    return Response.json(
-      { error: true, message: error.message },
-      { status: 500 }
-    );
+    if (!error.message.includes("Request failed")) {
+      return Response.json(
+        { error: true, message: error.message },
+        { status: 500 }
+      );
+    } else {
+      console.error(error.response.data.message);
+      return Response.json(
+        { error: true, message: "An error occurred, please try again later." },
+        { status: 500 }
+      );
+    }
   }
 });
 
