@@ -55,7 +55,7 @@ export default function Page() {
   return (
     <div className="d-flex flex-column align-items-center">
       <form
-        className="mt-5 border p-3 rounded"
+        className="mt-5 border p-3 rounded w-400px"
         style={{ maxWidth: "400px" }}
         onSubmit={handleOnSubmit}
       >
@@ -121,7 +121,7 @@ export default function Page() {
         </div>
         <button
           type="submit"
-          className="btn btn-secondary mt-3 w-100"
+          className="btn btn-primary mt-3 w-100"
           disabled={loading}
         >
           {loading && <Spinner />}
@@ -129,7 +129,7 @@ export default function Page() {
         </button>
         <hr />
         <div className="w-100 text-center text-muted">
-          Already hav an account? <Link href="/">Sign in</Link>
+          Already hav an account? <Link href="/signin">Sign in</Link>
         </div>
       </form>
     </div>

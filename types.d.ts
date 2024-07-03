@@ -1,5 +1,6 @@
 import NextAuth, { type DefaultSession } from "next-auth";
 import { JWT } from "next-auth/jwt";
+import { ReactNode } from "react";
 
 declare module "next-auth" {
   interface User {
@@ -9,6 +10,10 @@ declare module "next-auth" {
   }
 
   interface Session {
-    token: JWT
+    token: JWT;
   }
+}
+
+export interface IChildren {
+  children: ReactNode;
 }

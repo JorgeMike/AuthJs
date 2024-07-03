@@ -41,3 +41,7 @@ El proyecto actualmente puede realizar la subida de la imagen de perfil del usua
 ```
 
 Este endpoint realiza el envio de la imagen para que el micro servicio `https://github.com/JorgeMike/express-image-microservice` guarde la imagen
+
+## Actualizacion
+
+Al proyecto se sumara la practica de nextjs, con un proyecto de una agencia de viajes

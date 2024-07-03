@@ -1,4 +1,4 @@
-export {auth as middleware} from "@/auth";
+export { auth as middleware } from "@/auth";
 
 /* export async function middleware(request: NextRequest) {
   const session = await auth();
@@ -7,5 +7,5 @@ export {auth as middleware} from "@/auth";
 } */
 
 export const config = {
-  matcher: ["/d", "/d/:path*"],
+  matcher: ["/customer", "/customer/:path*"],
 };

@@ -1,3 +1,6 @@
+/* $body-bg: #edf0f5; */
+$primary: #344ead;
+
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/bootstrap";
@@ -8,4 +11,34 @@
 
 .hover-light-subtle:hover {
   background-color: $light-bg-subtle-dark;
+}
+
+.blog-header-logo {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 2.25rem;
+}
+
+.title {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+/* YourComponent.css */
+.icon {
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transform: translateX(-10px); /* Inicialmente desplazado a la izquierda */
+}
+
+.icon.show {
+  opacity: 1;
+  transform: translateX(0); /* Vuelve a su posición original */
+}
+
+.dropdown-toggle::before {
+  display: none !important;
+}
+
+.w-400px {
+  width: 400px;
 }

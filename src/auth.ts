@@ -47,7 +47,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   callbacks: {
     async authorized({ auth, request }) {
       const { pathname } = request.nextUrl;
-      if (pathname === "/d") return !!auth;
+      if (pathname === "user") return !!auth;
       return true;
     },
     async session({ session, token, user, newSession }) {

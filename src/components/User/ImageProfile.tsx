@@ -12,7 +12,7 @@ export default function ImageProfile({ src, alt, onEdit }: IImageProfile) {
 
   return (
     <div className="position-relative d-inline-block">
-      <img
+      <Image
         src={src || "/profile.png"}
         alt={alt || "Profile image"}
         width={120}
