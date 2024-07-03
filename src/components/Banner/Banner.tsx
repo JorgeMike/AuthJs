@@ -12,7 +12,7 @@ export default function Banner() {
         className="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
         style={{
           background:
-            "linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url('/travel.jpg')",
+            "linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url('https://via.placeholder.com')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

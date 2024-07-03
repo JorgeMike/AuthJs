@@ -13,7 +13,7 @@ const links = [
 
 export default function Navbar() {
   return (
-    <div className="py-1 mb-3 border-bottom sticky-top">
+    <div className="py-1 mb-3 border-bottom">
       <nav className="nav nav-underline">
         {links.map((link) => (
           <Link

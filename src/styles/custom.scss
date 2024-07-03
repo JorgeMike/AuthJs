@@ -42,3 +42,57 @@ $primary: #344ead;
 .w-400px {
   width: 400px;
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.social-media-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 10000000;
+}
+
+.hover-facebook,
+.hover-instagram,
+.hover-twitter,
+.hover-whatsapp {
+  background-color: white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.hover-facebook:hover {
+  background-color: #3b5998;
+  color: white;
+  transform: scale(1.1);
+}
+
+.hover-instagram:hover {
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  color: white;
+  transform: scale(1.1);
+}
+
+.hover-twitter:hover {
+  background-color: #1da1f2;
+  color: white;
+  transform: scale(1.1);
+}
+
+.hover-whatsapp:hover {
+  background-color: #25d366;
+  color: white;
+  transform: scale(1.1);
+}

@@ -20,9 +20,9 @@ export default function Header() {
   }, [session?.user?.email]);
 
   return (
-    <header className="border-bottom lh-1 py-3">
+    <header className="border-bottom lh-1 py-3 sticky-top bg-white">
       <div className="row flex-nowrap justify-content-between align-items-center">
-        <div className="col-8">
+        <div className="col-7">
           <Link
             className="blog-header-logo text-body-emphasis text-decoration-none"
             href="/"
@@ -30,7 +30,7 @@ export default function Header() {
             Large
           </Link>
         </div>
-        <div className="col-4 d-flex justify-content-end align-items-center">
+        <div className="col-5 d-flex justify-content-end align-items-center">
           <a className="link-secondary" href="#" aria-label="Search">
             <BiSearch size={20} className="mx-3" />
           </a>

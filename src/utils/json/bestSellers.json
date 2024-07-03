@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Chichén Itzá",
+    "location": "Yucatán, México",
+    "image": "https://via.placeholder.com/350x200?text=Chich%C3%A9n+Itz%C3%A1",
+    "rating": 4.8
+  },
+  {
+    "title": "Tulum",
+    "location": "Quintana Roo, México",
+    "image": "https://via.placeholder.com/350x200?text=Tulum",
+    "rating": 4.7
+  },
+  {
+    "title": "Cabo San Lucas",
+    "location": "Baja California Sur, México",
+    "image": "https://via.placeholder.com/350x200?text=Cabo+San+Lucas",
+    "rating": 4.6
+  },
+  {
+    "title": "Guanajuato",
+    "location": "Guanajuato, México",
+    "image": "https://via.placeholder.com/350x200?text=Guanajuato",
+    "rating": 4.5
+  },
+  {
+    "title": "Teotihuacán",
+    "location": "Estado de México, México",
+    "image": "https://via.placeholder.com/350x200?text=Teotihuac%C3%A1n",
+    "rating": 4.9
+  },
+  {
+    "title": "Puerto Vallarta",
+    "location": "Jalisco, México",
+    "image": "https://via.placeholder.com/350x200?text=Puerto+Vallarta",
+    "rating": 4.7
+  },
+  {
+    "title": "Cancún",
+    "location": "Quintana Roo, México",
+    "image": "https://via.placeholder.com/350x200?text=Canc%C3%BAn",
+    "rating": 4.8
+  },
+  {
+    "title": "San Miguel de Allende",
+    "location": "Guanajuato, México",
+    "image": "https://via.placeholder.com/350x200?text=San+Miguel+de+Allende",
+    "rating": 4.9
+  },
+  {
+    "title": "Oaxaca",
+    "location": "Oaxaca, México",
+    "image": "https://via.placeholder.com/350x200?text=Oaxaca",
+    "rating": 4.7
+  },
+  {
+    "title": "Palenque",
+    "location": "Chiapas, México",
+    "image": "https://via.placeholder.com/350x200?text=Palenque",
+    "rating": 4.8
+  }
+]

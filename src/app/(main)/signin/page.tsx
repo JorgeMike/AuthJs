@@ -1,10 +1,9 @@
 "use client";
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { ILogin } from "@/types/IAuth";
 import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
 import { FaGithub } from "react-icons/fa";
 import Alert from "@/components/Alerts/Alert";
 
@@ -26,7 +25,7 @@ export default function Page() {
       await signIn("credentials", {
         email: user.email,
         password: user.password,
-        callbackUrl: "/customer",
+        callbackUrl: "/user",
       });
     } catch (error) {
       console.log(error);
@@ -36,7 +35,7 @@ export default function Page() {
   const handleSigInGoogle = async () => {
     try {
       await signIn("google", {
-        callbackUrl: "/customer",
+        callbackUrl: "/user",
       });
     } catch (error) {
       console.log(error);
@@ -46,7 +45,7 @@ export default function Page() {
   const handleSigInGitHube = async () => {
     try {
       await signIn("github", {
-        callbackUrl: "/customer",
+        callbackUrl: "/user",
       });
     } catch (error) {
       console.log(error);
@@ -59,7 +58,10 @@ export default function Page() {
         <Alert />
       </Suspense>
       <div>
-        <form className="mt-5 border p-3 rounded w-400px" onSubmit={handleOnSubmit}>
+        <form
+          className="mt-5 border p-3 rounded w-400px"
+          onSubmit={handleOnSubmit}
+        >
           <h2 className="text-center">Sign In</h2>
           <hr />
           <div className="mb-3">
@@ -89,7 +91,8 @@ export default function Page() {
           </button>
           <hr />
           <div className="w-100 text-center text-muted">
-            if you don&lsquo;t have an account <Link href="/signup">Sign Up</Link>
+            if you don&lsquo;t have an account{" "}
+            <Link href="/signup">Sign Up</Link>
           </div>
         </form>
         <button
@@ -111,7 +114,7 @@ export default function Page() {
         {status === "authenticated" && (
           <div className="mt-3">
             You already have an active session.
-            <Link href={"/customer"}>Would you like to continue with it?</Link>
+            <Link href={"/user"}>Would you like to continue with it?</Link>
           </div>
         )}
       </Suspense>

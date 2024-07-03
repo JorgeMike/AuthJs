@@ -26,17 +26,17 @@ export default function UserAvatarDropDown({ src }: IUserAvatarDropDownProps) {
       </a>
       <ul className="dropdown-menu text-small shadow" style={{ zIndex: 10000 }}>
         <li>
-          <Link className="dropdown-item" href="/customer/new-project">
+          <Link className="dropdown-item" href="/user/new-project">
             My travels
           </Link>
         </li>
         <li>
-          <Link className="dropdown-item" href="/customer/settings">
+          <Link className="dropdown-item" href="/user/settings">
             Favorits
           </Link>
         </li>
         <li>
-          <Link className="dropdown-item" href="/customer/profile">
+          <Link className="dropdown-item" href="/user/profile">
             Profile
           </Link>
         </li>
