@@ -1,0 +1,112 @@
+[
+  {
+    "destination": "Maldives",
+    "location": "Indian Ocean",
+    "tripType": "Round trip",
+    "price": 2500,
+    "originalPrice": 2800,
+    "discount": "10% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Maldives",
+    "imageAlt": "Maldives"
+  },
+  {
+    "destination": "Bora Bora",
+    "location": "French Polynesia",
+    "tripType": "Round trip",
+    "price": 3000,
+    "originalPrice": 3300,
+    "discount": "9% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Bora+Bora",
+    "imageAlt": "Bora Bora"
+  },
+  {
+    "destination": "Bahamas",
+    "location": "Caribbean",
+    "tripType": "Round trip",
+    "price": 2200,
+    "originalPrice": 2500,
+    "discount": "12% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Bahamas",
+    "imageAlt": "Bahamas"
+  },
+  {
+    "destination": "Maui",
+    "location": "Hawaii, USA",
+    "tripType": "Round trip",
+    "price": 2000,
+    "originalPrice": 2300,
+    "discount": "13% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Maui",
+    "imageAlt": "Maui"
+  },
+  {
+    "destination": "Bali",
+    "location": "Indonesia",
+    "tripType": "Round trip",
+    "price": 1800,
+    "originalPrice": 2100,
+    "discount": "14% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Bali",
+    "imageAlt": "Bali"
+  },
+  {
+    "destination": "Santorini",
+    "location": "Greece",
+    "tripType": "Round trip",
+    "price": 1900,
+    "originalPrice": 2200,
+    "discount": "13% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Santorini",
+    "imageAlt": "Santorini"
+  },
+  {
+    "destination": "Phuket",
+    "location": "Thailand",
+    "tripType": "Round trip",
+    "price": 1700,
+    "originalPrice": 2000,
+    "discount": "15% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Phuket",
+    "imageAlt": "Phuket"
+  },
+  {
+    "destination": "Cancun",
+    "location": "Mexico",
+    "tripType": "Round trip",
+    "price": 1500,
+    "originalPrice": 1800,
+    "discount": "17% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Cancun",
+    "imageAlt": "Cancun"
+  },
+  {
+    "destination": "Fiji",
+    "location": "South Pacific",
+    "tripType": "Round trip",
+    "price": 2600,
+    "originalPrice": 2900,
+    "discount": "10% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Fiji",
+    "imageAlt": "Fiji"
+  },
+  {
+    "destination": "Seychelles",
+    "location": "Indian Ocean",
+    "tripType": "Round trip",
+    "price": 2400,
+    "originalPrice": 2700,
+    "discount": "11% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Seychelles",
+    "imageAlt": "Seychelles"
+  }
+]

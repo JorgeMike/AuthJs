@@ -10,6 +10,9 @@ const nextConfig = {
       },
       {
         hostname: "localhost",
+      },
+      {
+        hostname: "via.placeholder.com",
       }
     ],
   },

@@ -1,0 +1,44 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.prev-button {
+  left: -20px; /* Ajusta según sea necesario */
+}
+
+.next-button {
+  right: -20px; /* Ajusta según sea necesario */
+}
+
+/* Añade estilos para el carrusel y otros elementos si es necesario */
+
+.card-container {
+  position: relative;
+  width: 300px; /* Asegúrate de que el contenedor tenga el mismo ancho que la imagen */
+}
+
+.image-container {
+  position: relative;
+}
+
+.discount-badge {
+  top: calc(
+    100% - 15px
+  ); /* Ajusta este valor para colocar el descuento justo en la división */
+  right: 10px; /* Ajusta según sea necesario */
+  z-index: 10;
+}
+
+.content {
+  border-top: none;
+  margin-top: -10px; /* Ajusta este valor para que coincida con la posición del descuento */
+  padding-top: 10px; /* Ajusta para el espaciado necesario */
+}

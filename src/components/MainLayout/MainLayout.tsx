@@ -8,9 +8,11 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="container">
-      <Header />
-      <Navbar />
+    <main>
+      <div className="container">
+        <Header />
+        <Navbar />
+      </div>
       {children}
     </main>
   );

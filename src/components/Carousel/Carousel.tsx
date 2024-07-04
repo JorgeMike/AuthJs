@@ -3,7 +3,6 @@ import React, { useRef } from "react";
 import "@/styles/carousel.css";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import data from "@/utils/json/bestSellers.json";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -22,7 +21,7 @@ export default function Carousel() {
   };
 
   return (
-    <div className="row py-3">
+    <div className="row">
       <div className="col-lg-3">
         <div className="c-container">
           <h2 className="c-title">Our Best Sellers</h2>

@@ -8,7 +8,7 @@ import Google from "next-auth/providers/google";
 export const { handlers, signIn, signOut, auth } = NextAuth({
   pages: {
     signIn: "/",
-    error: "/",
+    error: "/signin",
   },
   providers: [
     GitHub,

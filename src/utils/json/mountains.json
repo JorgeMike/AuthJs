@@ -1,0 +1,156 @@
+[
+  {
+    "destination": "Rocky Mountains",
+    "location": "Colorado, USA",
+    "tripType": "Round trip",
+    "price": 900,
+    "originalPrice": 1100,
+    "discount": "18% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Rocky+Mountains",
+    "imageAlt": "Rocky Mountains"
+  },
+  {
+    "destination": "Swiss Alps",
+    "location": "Switzerland",
+    "tripType": "Round trip",
+    "price": 1500,
+    "originalPrice": 1700,
+    "discount": "12% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Swiss+Alps",
+    "imageAlt": "Swiss Alps"
+  },
+  {
+    "destination": "Andes",
+    "location": "Peru",
+    "tripType": "Round trip",
+    "price": 1100,
+    "originalPrice": 1250,
+    "discount": "12% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Andes",
+    "imageAlt": "Andes"
+  },
+  {
+    "destination": "Himalayas",
+    "location": "Nepal",
+    "tripType": "Round trip",
+    "price": 1800,
+    "originalPrice": 2000,
+    "discount": "10% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Himalayas",
+    "imageAlt": "Himalayas"
+  },
+  {
+    "destination": "Pyrenees",
+    "location": "Spain/France",
+    "tripType": "Round trip",
+    "price": 1200,
+    "originalPrice": 1350,
+    "discount": "11% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Pyrenees",
+    "imageAlt": "Pyrenees"
+  },
+  {
+    "destination": "Appalachians",
+    "location": "USA",
+    "tripType": "Round trip",
+    "price": 850,
+    "originalPrice": 950,
+    "discount": "10% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Appalachians",
+    "imageAlt": "Appalachians"
+  },
+  {
+    "destination": "Caucasus",
+    "location": "Russia/Georgia",
+    "tripType": "Round trip",
+    "price": 1300,
+    "originalPrice": 1450,
+    "discount": "10% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Caucasus",
+    "imageAlt": "Caucasus"
+  },
+  {
+    "destination": "Carpathians",
+    "location": "Romania",
+    "tripType": "Round trip",
+    "price": 950,
+    "originalPrice": 1100,
+    "discount": "14% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Carpathians",
+    "imageAlt": "Carpathians"
+  },
+  {
+    "destination": "Alaska Range",
+    "location": "Alaska, USA",
+    "tripType": "Round trip",
+    "price": 1700,
+    "originalPrice": 1900,
+    "discount": "11% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Alaska+Range",
+    "imageAlt": "Alaska Range"
+  },
+  {
+    "destination": "Atlas Mountains",
+    "location": "Morocco",
+    "tripType": "Round trip",
+    "price": 800,
+    "originalPrice": 950,
+    "discount": "16% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Atlas+Mountains",
+    "imageAlt": "Atlas Mountains"
+  },
+  {
+    "destination": "Ural Mountains",
+    "location": "Russia",
+    "tripType": "Round trip",
+    "price": 1000,
+    "originalPrice": 1200,
+    "discount": "17% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Ural+Mountains",
+    "imageAlt": "Ural Mountains"
+  },
+  {
+    "destination": "Sierra Nevada",
+    "location": "California, USA",
+    "tripType": "Round trip",
+    "price": 950,
+    "originalPrice": 1100,
+    "discount": "13% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Sierra+Nevada",
+    "imageAlt": "Sierra Nevada"
+  },
+  {
+    "destination": "Drakensberg",
+    "location": "South Africa",
+    "tripType": "Round trip",
+    "price": 1400,
+    "originalPrice": 1600,
+    "discount": "13% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Drakensberg",
+    "imageAlt": "Drakensberg"
+  },
+  {
+    "destination": "Great Dividing Range",
+    "location": "Australia",
+    "tripType": "Round trip",
+    "price": 1100,
+    "originalPrice": 1300,
+    "discount": "15% discount",
+    "perNight": true,
+    "imageUrl": "https://via.placeholder.com/350x200?text=Great+Dividing+Range",
+    "imageAlt": "Great Dividing Range"
+  }
+]

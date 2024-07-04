@@ -20,6 +20,9 @@ Este proyecto tiene como objetivo practicar el uso de la librería AuthJS para i
 - Axios
 - Zod
 - Sass
+- Swiper
+- React icons
+- React hot toast
 
 # Características de la aplicación
 
@@ -45,3 +48,7 @@ Este endpoint realiza el envio de la imagen para que el micro servicio `https://
 ## Actualizacion
 
 Al proyecto se sumara la practica de nextjs, con un proyecto de una agencia de viajes
+
+## Capturas
+
+![TCaptura de pantalla](public/home.png)
