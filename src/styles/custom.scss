@@ -9,10 +9,6 @@ $primary: #344ead;
   border-radius: 0px 10px 10px 0px;
 }
 
-.hover-light-subtle:hover {
-  background-color: $light-bg-subtle-dark;
-}
-
 .blog-header-logo {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
   font-size: 2.25rem;
@@ -99,4 +95,14 @@ $primary: #344ead;
 
 .smaller {
   font-size: 0.8rem;
+}
+
+.hover-secondary {
+  background-color: #ffffff;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.hover-secondary:hover {
+  background-color: #e7e7e7;
 }
