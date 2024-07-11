@@ -1,5 +1,5 @@
 "use client";
-import SearchBar from "@/components/SearchComponents/SearchModule/SearchBar";
+import SearchBar from "@/components/SearchComponents/SearchModuleDesktop/SearchBar";
 import React, { useState } from "react";
 import { DateRange, DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css";

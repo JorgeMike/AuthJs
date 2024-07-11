@@ -7,7 +7,7 @@ import mountains from "@/utils/json/mountains.json";
 import beaches from "@/utils/json/beaches.json";
 import React from "react";
 import DestinationWithCarousel from "@/components/Sections/DestinationWithCarousel";
-import SearchModule from "@/components/SearchComponents/SearchModule/SearchModule";
+import SearchModule from "@/components/SearchComponents/SearchModuleDesktop/SearchModule";
 
 export default function Page() {
   return (

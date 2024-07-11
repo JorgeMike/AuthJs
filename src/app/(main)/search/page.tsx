@@ -3,23 +3,29 @@ import React from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import "@/styles/date.css";
-import DatePicker from "@/components/SearchComponents/DatePicker/DatePicker";
-import SearchModule from "@/components/SearchComponents/SearchModule/SearchModule";
+import SearchModule from "@/components/SearchComponents/SearchModuleDesktop/SearchModule";
 import { IoOptions } from "react-icons/io5";
 import DestinationFilter from "@/components/SearchComponents/DestinationFilter/DestinationFilter";
 import { IoAirplane } from "react-icons/io5";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import DestinationCard from "@/components/DestinationCard/DestinationCard";
+import DatePicker from "@/components/SearchComponents/DatePicker/DatePicker";
+import DestinationFilterMobile from "@/components/SearchComponents/DestinationFilterMobile/DestinationFilterMobile";
 
 export default function Page() {
   const session = useSession();
   return (
     <div className="container-fluid container-lg">
       <SearchModule />
-      <div className="border p-1 rounded mx-md-5 text-muted d-flex align-items-center justify-content-center gap-3 d-lg-none">
+      <DestinationFilterMobile />
+      <a
+        className="border p-1 rounded mx-md-5 text-muted d-flex align-items-center justify-content-center gap-3 d-lg-none text-decoration-none pointer"
+        data-bs-toggle="modal"
+        data-bs-target={`#destinationFilterMobile`}
+      >
         <IoOptions className="text-primary" /> Filtros y ordenamientos
-      </div>
+      </a>
       <DatePicker />
       <div className="row">
         <div className="col-2 d-none d-lg-block py-2">
