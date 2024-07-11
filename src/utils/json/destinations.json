@@ -1,0 +1,56 @@
+[
+  {
+    "nombre": "Ciudad de México",
+    "descripcion": "La Ciudad de México, la capital vibrante y extensa de México, es conocida por sus centros culturales y su rica historia.",
+    "calificacion": 4.5,
+    "precioDesde": 120,
+    "moneda": "USD",
+    "disponibilidad": {
+      "inicio": "2024-07-10",
+      "fin": "2024-07-20"
+    },
+    "facilidades": [
+      "Wi-Fi",
+      "Desayuno Incluido",
+      "Transporte",
+      "Piscina",
+      "Gimnasio"
+    ],
+    "imagen": "path/to/ciudad-de-mexico-image.jpg",
+    "ubicacion": {
+      "direccion": "Centro Histórico, Ciudad de México, México",
+      "mapa": "https://maps.google.com/?q=Centro+Histórico,+Ciudad+de+México"
+    },
+    "contacto": {
+      "email": "contacto@hoteldemexico.com",
+      "telefono": "+52 55 1234 5678"
+    }
+  },
+  {
+    "nombre": "Maldivas",
+    "descripcion": "Las Maldivas, conocidas por sus playas cristalinas y resorts lujosos, son un destino perfecto para relajarse.",
+    "calificacion": 5,
+    "precioDesde": 300,
+    "moneda": "USD",
+    "disponibilidad": {
+      "inicio": "2024-08-01",
+      "fin": "2024-08-15"
+    },
+    "facilidades": [
+      "Wi-Fi",
+      "Desayuno Incluido",
+      "Transporte",
+      "Spa",
+      "Actividades Acuáticas"
+    ],
+    "imagen": "path/to/maldivas-image.jpg",
+    "ubicacion": {
+      "direccion": "Islas Maldivas",
+      "mapa": "https://maps.google.com/?q=Islas+Maldivas"
+    },
+    "contacto": {
+      "email": "contacto@resortmaldivas.com",
+      "telefono": "+960 123 4567"
+    }
+  }
+]

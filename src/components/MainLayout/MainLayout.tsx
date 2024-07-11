@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header/Header";
 import Navbar from "./Navbar/Navbar";
+import Footer from "./Footer/Footer";
 
 export default function MainLayout({
   children,
@@ -9,11 +10,12 @@ export default function MainLayout({
 }) {
   return (
     <main>
-      <div className="container">
+      <div className="container-lg">
         <Header />
         <Navbar />
       </div>
       {children}
+      <Footer />
     </main>
   );
 }

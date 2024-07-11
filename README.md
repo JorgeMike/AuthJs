@@ -51,7 +51,10 @@ Al proyecto se sumara la practica de nextjs, con un proyecto de una agencia de v
 
 ## Capturas
 
-![Captura de pantalla](public/home.png)
+![Captura de pantalla](public/readme/home.png)
 
-![Captura de pantalla](public/searchComponent.png)
+![Captura de pantalla](public/readme/searchComponent.png)
 
+![Captura de pantalla](public/readme/routeSearch.png)
+
+![Captura de pantalla](public/readme/footerFilter.png)

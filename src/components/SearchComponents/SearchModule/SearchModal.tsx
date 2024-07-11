@@ -2,6 +2,8 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import capitals from "@/utils/json/capitals.json";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 interface ISearchModalProps {
   setDestination: Dispatch<SetStateAction<string>>;
@@ -12,9 +14,17 @@ export default function SearchModal({
   setDestination,
   destination,
 }: ISearchModalProps) {
+  const searchParams = useSearchParams();
+
   function handleSearch(term: string) {
     console.log(term);
     setDestination(term);
+  }
+
+  function buildLink(city: string) {
+    const params = new URLSearchParams(searchParams);
+    params.set("destination", city);
+    return `/search?${params.toString()}`;
   }
 
   return (
@@ -52,13 +62,19 @@ export default function SearchModal({
               {capitals.map((capital) => (
                 <li
                   key={capital.city}
-                  className=" my-1 px-2 py-1 d-flex align-items-center gap-3 hover-secondary rounded"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
                 >
-                  <FaMapMarkerAlt />
-                  <div className="d-flex flex-column">
-                    <p className="mb-0 fs-5 fw-bold">{capital.city}</p>
-                    <small>{capital.country}</small>
-                  </div>
+                  <Link
+                    href={buildLink(capital.city)}
+                    className=" my-1 px-2 py-1 d-flex align-items-center gap-3 hover-secondary rounded text-decoration-none text-black"
+                  >
+                    <FaMapMarkerAlt />
+                    <div className="d-flex flex-column">
+                      <p className="mb-0 fs-5 fw-bold">{capital.city}</p>
+                      <small>{capital.country}</small>
+                    </div>
+                  </Link>
                 </li>
               ))}
             </ul>

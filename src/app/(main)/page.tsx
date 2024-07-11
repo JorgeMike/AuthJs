@@ -1,19 +1,20 @@
 import Banner from "@/components/Banner/Banner";
 import Carousel from "@/components/Carousel/Carousel";
-import DestinationsSection from "@/components/Seccions/DestinationsSection";
+import DestinationsSection from "@/components/Sections/DestinationsSection";
 import SocialMedia from "@/components/SocialMedia/SocialMedia";
 import { IDestination } from "@/types/IDestination";
 import mountains from "@/utils/json/mountains.json";
 import beaches from "@/utils/json/beaches.json";
 import React from "react";
-import SearchBar from "@/components/SearchBar/SearchBar";
+import DestinationWithCarousel from "@/components/Sections/DestinationWithCarousel";
+import SearchModule from "@/components/SearchComponents/SearchModule/SearchModule";
 
 export default function Page() {
   return (
     <>
       <div className="container">
         <Banner />
-        <SearchBar />
+        <SearchModule />
         <Carousel />
         <hr style={{ color: "#cecece" }} />
         <DestinationsSection
@@ -21,6 +22,8 @@ export default function Page() {
           title="Mountain Adventures"
           description="Explore breathtaking mountain destinations"
         />
+        <hr style={{ color: "#cecece" }} />
+        <DestinationWithCarousel />
         <hr style={{ color: "#cecece" }} />
         <DestinationsSection
           data={beaches as IDestination[]}
